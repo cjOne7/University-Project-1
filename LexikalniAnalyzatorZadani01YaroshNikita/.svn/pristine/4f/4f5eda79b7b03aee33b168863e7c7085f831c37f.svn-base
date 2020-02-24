@@ -1,0 +1,30 @@
+
+\section{Úvod}
+
+\subsection{Cíl semestrální práce} 
+Cílem semestrální práce je osvěžení znalostí získané v předmětech IZAPR a IPALP z předchozího semestru. 
+Dále bude cílem zjistit do jaké míry studenti mají představu o objektově orientovaného programování.
+To vše bude ověřeno na malém projektu, který studenti vypracují do značné míry samostatně. 
+%Až budou probrány složitější partie programovacího jazyka JAVA, bude požadováno tento projekt přepracovat v duchu nových poznatků.
+ 
+
+\subsection{Účel dokumentu}
+Tento dokument je určen pro vyučující a studenty, jako zadání první semestrální práce  na cvičení předmětu \uv{Objektově orientované programování} (IOOP).\\
+
+Dokument je členěn do dvou části.\\
+
+Nejdříve dokument obsahuje vizi, která je neformálním popisem požadované funkce. Vize slouží k přiblížené problematiky lexikální analýzy. Vizi lze zpracovat pomocí techniky analýzy podstatných jmen a sloves, z kterou byli studenti seznámeni v prvním ročníku, k nalezení tříd a jejich odpovědností vyvíjené aplikace.\\
+
+
+Za vizí následují požadavky. Ty jsou rozděleny do dvou základních kategorií a to do funkčních a nefunkčních požadavků. 
+Funkční požadavky popisují budoucí hlavní vlastnosti aplikace.
+Nefunkční požadavky předepisují co se může použít, jak musí ošetřit chyby a jaké jsou výkonnostní omezení.\\
+
+
+Teprve splněním všech požadavků, funkčních a nefunkčních, může být semestrální práce přijata. Než se tak stane, bude studentům práce vrácená k dopracování. Je nutné upozornit na to, že může  při nedodržení termínu odevzdání dojít k souběhu druhou semestrální prací, která bude výrazně větší.
+
+
+%Teprve po dokončení vývoje rozhraní a třídy seznamu, bude přikročeno k jejich začlenění do původního projektu skladu nábytku. Dojde i k přejmenování projektu na EvidenceNabytku. V podstatě dojde k vytvoření nového projektu, který bude inspirován verzí z předmětu IPALP.
+%\\
+%
+%Při vývoji budeme používat princip výstavby programu: Ze zdola nahoru. To znamená že nejdříve naprogramujeme třídy nejnižší úrovně, které nepoužívají jiné třídy. Teprve později bude přikročíme k naprogramování tříd vyšší úrovně a až naposled vytvořené třídy začleníme do uživatelského rozhraní.

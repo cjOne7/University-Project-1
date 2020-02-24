@@ -1,0 +1,66 @@
+\section {Vize}
+\label{sec:vize}
+
+Program \uv{\textbf{Lexikální analyzátor}} bude umožňovat zpracování textu ze souboru a zobrazení výsledků v podobě seznamu tokenů na monitoru.\\
+
+Proč takové zadání?\\
+
+Pro zpracování textu a převod do dat v počítači byla v minulém semestru využívána třída Scanner. 
+Její instance umožňovala bohaté zpracování textu ze vstupního zařízení. 
+Její nevýhodou bylo, že se muselo předpokládat jaký druh informace v textu bude. 
+Když se očekávalo celé číslo musela se použít metoda \lstinline|nextInt()| a když reálné číslo tak \lstinline|nextDouble()| nebo  \lstinline|nextfloat()|.
+Před tím se mohlo zeptat, zda takový formát dat je v textu připraven ke zpracování. 
+K tomu sloužily metody \lstinline|hasNextInt()|, \lstinline|hasNextDouble()|, \lstinline|hasNextFloat()| a tak podobně. 
+To je někdy nepraktické a v případě jednoduché rozboru vstupního textu je výhodnější si naprogramovat vlastní řešení. 
+K takovému řešení se obvykle říká lexikální analyzátor (anglicky scanner).\\
+
+Lexikální analýza, kterou provádí lexikální analyzátor, rozděluje posloupnost znaků na lexikální elementy (například identifikátory, čísla, klíčová slova, operátory, a pod.). 
+Tímto způsobem překladače zpracovávají naše zdrojové kódy do tzv. tokenů a ty se dál poskytují k dalšímu zpracování v syntaktickém analyzátoru.
+S tímto se někteří studenti setkají na navazujícím magisterském studiu v předmětu kompilátory nebo v teorii jazyků.\\
+
+My samozřejmě nebudeme realizovat kompilátor, ale pokusíme se o naprogramování jednoduché lexikální analýzy v podobě malého lexikálního analyzátoru.\\
+
+Náš program rozebere vstupní text na výstupní tokeny v podobě několika klíčových slov, čísel v desítkové a hexadecimální soustavě a na zbylé texty, které bude považovat za identifikátory. 
+Za oddělovače budou použity bílé znaky, jako jsou mezera, tabelátor, konec řádku a dále znaky rovnítka, čárky a středníku.
+Mezera, tabelátor a znaky konce řádku budou oddělovat jednotlivé lexikální elementy. 
+Čárka, rovnítko a středník budou plnit funkci oddělovačů a zároveň budou tokeny.
+Výstupem programu bude výpis charakteristik všech tokenů.
+\\
+
+%\newpage
+Příklad rozboru\\
+
+Vstupní text:
+
+\begin{verbatim}
+  begin 
+  
+  a,b=100;
+  
+  c=0x10;
+  
+  end;
+\end{verbatim}
+
+Výpis tokenů
+\begin{verbatim}
+KeyToken{klicoveSlovo=KeyWord{key=begin}}
+SeparatorToken{Separator{bílý znak}}
+IdentifierToken{a}
+SeparatorToken{Separator{čárka}}
+IdentifierToken{b}
+SeparatorToken{Separator{rovná se}}
+NumberToken{value=100}
+SeparatorToken{Separator{středník}}
+SeparatorToken{Separator{bílý znak}}
+IdentifierToken{c}
+SeparatorToken{Separator{rovná se}}
+NumberToken{value=16}
+SeparatorToken{Separator{středník}}
+SeparatorToken{Separator{bílý znak}}
+KeyToken{klicoveSlovo=KeyWord{key=end}}
+SeparatorToken{Separator{středník}}
+SeparatorToken{Separator{bílý znak}}
+\end{verbatim}
+
+

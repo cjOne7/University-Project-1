@@ -1,0 +1,97 @@
+\documentclass[11pt]{article} 
+
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+
+\newcommand{\version}{Verze 1.1}
+\newcommand{\versiondatum}{25.9.2018}
+
+\usepackage{geometry} 
+\geometry{a4paper}
+\geometry{margin=2cm}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{hyperref}
+
+
+\usepackage{xcolor}
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{gray}{rgb}{0.95,0.95,0.95}
+
+\usepackage{listings}
+%\usepackage{listingsutf8}
+
+
+\hypersetup{%
+    colorlinks=false
+    ,urlcolor=black
+    ,citecolor=black
+    ,linkcolor=black
+}
+
+
+\lstdefinestyle{customjava}{
+    %belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    %frame=L,
+    xleftmargin=\parindent,
+    language=Java,
+    showstringspaces=false,
+    basicstyle=\footnotesize\ttfamily,
+    numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt,
+    tabsize=4,
+    keywordstyle=\bfseries\color{blue},
+    commentstyle=\itshape\color{purple!40!black},
+    identifierstyle=\color{black},
+    stringstyle=\color{orange},
+    backgroundcolor=\color{gray},
+    inputencoding=utf8,
+    extendedchars=true,
+    texcl=true,
+    literate={á}{{\'a}}1 {í}{{\'i}}1 ,
+}
+
+\lstset{style=customjava}
+
+\setlength{\parindent}{0pt}
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{1pt} % customise the layout...
+\lhead{Zadání Sem01 Lexikální Analyzátor}\chead{}\rhead{}
+\lfoot{\versiondatum} \cfoot{\version} \rfoot{\thepage}
+\renewcommand{\footrulewidth}{1pt} 
+\makeatletter
+\let\ps@plain\ps@fancy
+\makeatother
+
+
+
+
+\newcommand{\tf}[1][{}]{%
+\fillin[#1][0.25in]%
+}
+
+\newcommand{\cf}[1][{}]{%
+\fillin[#1][15cm]%
+}
+
+\newcommand{\testheader}[3]{%
+\firstpageheader{#1}{#2}{#3}
+\runningheader{#1}{#2}{#3}
+}
+
+
+%\includeonly{}
+\begin{document}
+	\input{title}
+    \input{uvod}
+    \input{vize}
+    \input{pozadavky}
+    
+
+
+\end{document}

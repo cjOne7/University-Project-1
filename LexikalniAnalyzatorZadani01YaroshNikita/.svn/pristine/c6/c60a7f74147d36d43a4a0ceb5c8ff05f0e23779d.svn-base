@@ -1,0 +1,161 @@
+% ==============================================================
+\section{Plán konfigurace}
+\label{kap:plan_konfigurace}
+
+
+
+\subsection{Nástroje pro podporu řízení konfigurací}
+%[Bude používán speciální nástroj pro uložení, verzování a řízení změn jednotlivých pracovních produktů? Pokud ne, kde budou pracovní produkty uchovávány a jaká bude adresářová struktura tohoto úložiště?]
+
+V projektu se mohou využívat tyto verzovací nástroje:
+\begin{enumerate}
+    \item \href{http://www.collab.net/downloads/subversion}{Subversion (Windows 32/64-bits)} - Klient verzovacího systému \uv{Subversion (SVN)} pro  příkazový řádek
+  
+    \item \href{https://subversion.apache.org/} {Apache\texttrademark~Subversion\textregistered} - Stránky se softwarovým projektem verzovacího systému \uv{Subversion}. Tuto stránku mohou využít ti, kteří nepoužívají operační systém Windows.  
+
+    \item \href{https://www.visualsvn.com/server/download/}{VisualSVN Server  (Windows 32/64-bits)} - Tento server je nainstalován na serveru 
+\begin{center} 
+    \verb#https:\\fei-svn.upceucebny.cz/#
+\end{center}
+  
+   \item \href{https://tortoisesvn.net/}{TortoiseSVN} - Klient Apache\texttrademark~Subversion (SVN)~\textregistered  pro operační systém Windows, který je implementován jako rozšíření  \uv{Windows Shell}. To znamená, že je integrován do operačního systému tak, že ho může využívat jakýkoliv prohlížeč souborů. Při použití tohoto prostředku je nutné dbát na to, aby se neukládaly dočasné soubory, jako jsou například soubory s rozšířením \verb#class#.
+   
+\end{enumerate}
+
+
+\newpage
+% --------------------------------------------------------------
+\subsection{Základní pravidla a procedury}
+% --------------------------------------------------------------
+%\subsection{Pracovní produkty (prvky konfigurace)} 
+%[Jaké pracovní produkty budou v průběhu projektu vytvářeny? Měly by vycházet z nějakých šablon? Pokud ano, je možné tyto šablony upravovat? Kde jsou tyto šablony k dispozici?]
+
+
+Na fakultě je provozován server SVN (Subversion) pro účely studentů bakalářského studia. Každý student bude moci využívat úložiště tohoto serveru po celou dobu studia. Jenom na některých předmětech bude toto používání povinné. Jinak studenti mohou toto úložiště používat k uchování softwarových projektů i s jiných předmětů. Není dovoleno ukládat rozsáhlé binární soubory, jako jsou obrázky, videa apod.
+
+
+
+	Pro připojení z domova nebo přes Eduroam je nutné mít počítači nainstalovaného a spuštěného klienta  \href{https://dokumenty.upce.cz/Univerzita/cits/navody/datova-sit.html}{VPN UPCE}
+
+
+
+\subsubsection{Prohlížení složek studenta na úložišti SVN}
+\label{kon:prohlizeni}
+Kdy se tento postup použije:
+\begin{itemize} 
+	\item K získání platné adresy pro konfiguraci připojení projektu v NetBeans s úložištěm. 
+	\item K prohlédnutí struktury souborů na úložišti SVN studenta.
+	\item Ke kontrole, zda došlo k uložení správného obsahu zdrojových souborů projektu.
+\end{itemize}
+Postup:
+\begin{enumerate}
+	\item V internetovém prohlížeči  nastavte adresu úložiště SVN:\\
+		{\centering \verb#https://fei-svn.upceucebny.cz/svn/bsxx/prijmeni_jmeno_ixxxxx#}\\
+		kde \verb#prijmeni_jmeno_ixxxxx# je příjmení, jméno a identifikační číslo studenta. Příjmení a jméno jsou bez diakritiky.\\
+	Když si nejste jisti vašim identifikačním číslem, můžete začít na adrese\\ 
+	\verb#https://fei-svn.upceucebny.cz/#\\
+	a pokračovat ve vyhledání své složky na úložišti.
+	\item Po zadání adresy se objeví okno k ověření studenta. Je nutné zadat
+přihlašovací údaje do domény UPCE.
+	\item Případně se objeví okno s potvrzením, zda přijímáte nedůvěryhodný certifikát. Odsouhlaste a zaškrtněte, že to přijímáte trvale.
+	\item Po zobrazení vaší složky, zkontrolujte, zda vaše složka obsahuje větve \verb#ipalp#, \verb#izapr# a \verb#ioop# a případně další větve.
+	\item Přejděte na větev \verb#ipalp# a tuto adresu vložte do schránky. Tuto adresu lze poté použijte při nastavení přístupu k verzovacímu serveru v ostatních programech. Především se to týká nastavení v \verb#NetBeans#.
+
+	\item Jakýkoliv problém s úložištěm SVN nahlaste učiteli na cvičení nebo na e-mail správce serveru 	
+	\href{mailto:Karel.Simerda@upce.cz}{Karel.Simerda@upce.cz} nebo \href{mailto:Michael.Bazant@upce.cz}{Michael.Bazant@upce.cz}
+\end{enumerate}
+
+\newpage
+\subsubsection{Import -- První vložení souborů projektu v NetBeans do úložiště SVN}
+\label{konfig:import}
+Kdy se tento postup použije:
+\begin{itemize} 
+	\item Pouze k prvnímu odeslání souborů projektu v NetBeans do úložiště SVN. Po té se již používají ostatní příkazy jako jsou  \verb#checkout#, \verb#commit# nebo  \verb#update#.
+\end{itemize}
+Postup:
+\begin{enumerate}
+	\item Ve vývojovém prostředí \verb#NetBeans# vytvořte nový projekt. 
+	\item Pravým tlačítkem myši na kořenu nově vytvořeného projektu vyvolejte kontextové menu
+a zvolte položku \verb#Verisioning#.
+	\item Dále zvolte v otevřeném podmenu příkaz \verb#Import into Subversion Repository...#
+	\item Po otevření okna \verb#Import# ve třech krocích inicializujte připojení k úložišti a import souborů projektu.
+    \begin{enumerate}
+		\item V kroku \verb#Subversion Repository# nastavte \verb#URL#  lokalizaci vaší složky na fakultním  serveru SVN a přihlašovací údaje vašeho univerzitního účtu. Doporučuje se povolit uložení přihlašovacích údajů.
+		\item V kroku \verb#Repository Folder# nastavte vyberte nebo přepište složku do které chcete uložit soubory projektu. Aby se povolil další krok, musíte vyplnit okno \verb#Specify the Message# vhodným textem o importu.
+		\item V třetím kroku se v novém okně vypíše seznam souborů, které se budou nově přenášet do úložiště. Zde je možné provést poslední úpravy, které souboru se budou přenášet. Nedoporučuje se tento seznam měnit, pokud nejsou ve složkách projektu nějaké vaše pracovní soubory. NetBeans si své pracovní soubory odebírá z obsahu složek projektu automaticky.
+	\end{enumerate}
+	\item Odevzdání souborů do úložiště potvrďte stisknutím tlačítka \verb#Finish#. Tímto tlačítkem můžete tento třetí krok vynechat a provést přenos souborů projektu do úložiště bez kontroly seznamu souborů.
+\end{enumerate}
+
+\newpage
+\subsubsection{Commit -- Průběžné odevzdání souborů projektu do úložiště SVN}
+\label{konfig:commit}
+Kdy se tento postup použije:
+\begin{itemize} 
+	\item Kdykoliv když student uzná z vhodné uložit danou verzi zdrojových souborů.
+	\item Když končí práci na dané počítači, tj. na cvičení nebo mimo něj.
+\end{itemize}
+Postup:
+\begin{enumerate}
+	\item Ve vývojovém prostředí \verb#NetBeans# otevřete rozpracovaný projekt. 
+	\item Pravým tlačítkem myši na kořenu nově vytvořeného projektu vyvolejte kontextové menu a zvolte položku \verb#Subversion#.
+	\item Dále zvolte v otevřeném podmenu příkaz \verb#Commit#.
+		\item Po otevření okna \verb#Commit# překontrolujte seznam modifikovaných souborů určených k odeslání na úložiště SVN.
+	\item Případně doplňte zprávu o důvodu odeslání modifikovaných souborů do úložiště.
+	\item Odešlete modifikované soubory stisknutím tlačítka \verb|\Commit|.
+	
+\end{enumerate}
+
+\subsubsection{Update -- Občerstvení pracovní složky s projektem obsahem úložiště SVN}
+\label{konfig:update}
+Kdy se tento postup použije:
+\begin{itemize} 
+	\item Když chceme získat aktuální stav souborů z úložiště SVN. To může být typicky v takovém případě, že jsme na jednom počítači uložili stav projektu a potom jsme přešli k jinému počítači, kde již máme tentýž projekt připojen k úložišti.
+    \item Tento příkaz se v praxi využívá k aktualizaci projektu, když na projektu současně pracuje více programátorů. V našem případě se to může stát, když učitel do projektu konkrétního studenta vloží své připomínky.
+\end{itemize}
+Postup:
+\begin{enumerate}
+    \item Ve vývojovém prostředí \verb#NetBeans# otevřete rozpracovaný projekt. 
+    \item Pravým tlačítkem myši na kořenu nově vytvořeného projektu vyvolejte kontextové menu a zvolte položku \verb#Subversion#.
+    \item Dále zvolte v otevřeném podmenu příkaz \verb#Update# a dále ještě proveďte další volbu a to již příkaz \verb|Update to HEAD|, tím dojde ke stažení modifikovaných souborů z úložiště SVN o proti lokálnímu stavu projektu.	
+\end{enumerate}
+
+\subsubsection{Checkout -- Připojení pracovního adresáře k úložišti SVN}
+\label{konfig:checkout}
+Kdy se tento postup použije:
+\begin{itemize} 
+	\item Když chceme pracovní složku (adresář) na svém počítači připojit ke složce na úložišti SVN a stáhnout z úložiště všechny soubory.
+    \item Když chceme v NetBeans se připojit k uloženému projektu na úložišti SVN.
+\end{itemize}
+Postup:
+\begin{enumerate}
+	\item V NetBeans rozvineme menu \verb|Team| a zvolíme položku \verb|Subversion| a nakonec zvolíme položku \verb|Checkout...|.
+	\item Po otevření okna \verb|Checkout| vyplníme textové pole \verb|Reposiotory URL| adresou odkud chceme stáhnout projekt.
+    \item Vyplníme nebo změníme přihlašovací údaje.
+    \item Tlačítkem \verb|Next| přejdeme na druhý krok zadávaní příkazu \verb|Checkout| kde vyplníme nebo vybereme složku na úložišti SVN s projktem a dále případně změníme umístnění lokální složky, kam se požadovaný projekt stáhne.
+    \item Celý příkaz \verb|Checkout| ukončíme stisknutím tlačítka \verb|Finish|.
+    \item Nakonec se ještě samotný \verb|NetBeans| zepta, zda má daný projekt nebo projekty otevřít.
+	
+\end{enumerate}
+
+
+% --------------------------------------------------------------
+\subsection{Jmenné konvence} \label{kon:konvence}
+%[Je nutné dodržovat při vytváření pracovních produktů, popř. nových adresářů v úložišti, nějaké jmenné konvence?(Např. Nazev_projetu_nazev_pracovniho_produktu_verze. )]
+
+Požaduje se, aby v jméně projektu bylo na začátku příjmení studenta, který projekt vypracoval. To je z toho důvodu, aby učitel mohl jednoznačně identifikovat sdílené projekty všech studentů na cvičení.
+Dále jméno projektu bude obsahovat identifikaci projektu.
+
+% --------------------------------------------------------------
+%\subsection{Změny pracovních produktů} 
+%[Bude definován specifický postup, podle kterého bude probíhat zadávání a řízení změn pracovních produktů? Je nutné, aby byly změny vždy schváleny nějakou odpovědnou osobou?...]
+
+
+% --------------------------------------------------------------
+%\section{Strategické sestavení}
+%\subsection{} 
+
+
+% --------------------------------------------------------------
+%\section{Strategie nasazení IS/ICT do provozu}
+%\subsection{} 

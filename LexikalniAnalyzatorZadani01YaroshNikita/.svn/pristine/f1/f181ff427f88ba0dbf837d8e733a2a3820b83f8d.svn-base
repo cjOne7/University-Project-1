@@ -1,0 +1,49 @@
+\section {Požadavky}
+
+\subsection {Funkční požadavky} 
+
+\paragraph {FR1 Zobrazovaní seznamu:} Program bude vypisovat výsledek lexikální analýzy vstupního textového souboru v podobě charakteristiky tokenů, tak je naznačeno v kapitole \ref{sec:vize}.\nameref{sec:vize}
+
+\paragraph {FR2 Spouštěcí příkaz:} Program se bude spouštět z příkazového řádku svým názvem,kdy jeho prvním parametrem bude  jméno souboru, případně s cestou k němu.
+
+\paragraph {FR3 Volba klíčových slov} Program bude zpracovávat tyto klíčová slova: \textbf{\texttt{begin, end, for, if, then, else, while a return}}.
+
+\paragraph {FR4 Identifikátory} Program bude ostatní slova, ta která budou začínat písmenem a nebudou klíčová, považovat za identifikátory.
+
+\paragraph {FR5 Číselné literály} Program bude rozlišovat desítková a hexadecimální čísla. U hexadecimální  čísel se požaduje prefix \textbf{\lstinline|0x|}.
+
+\paragraph {FR6 Oddělovače} Program bude rozlišovat tyto oddělovače: rovnítko \uv{\textbf{=}}, čárku \uv{\textbf{,}}, dvojtečku \uv{\textbf{:}}  a středník \uv{\textbf{;}}.
+
+\paragraph {FR7 Velikost písmen} Program bude zpracovávat pouze malá písmena.
+
+\paragraph {FR8 Opakování bílých znaků} Program bude výskyt bílých znaků za sebou považovat za jeden a bude vypsán pouze jeden token.
+
+
+
+
+
+
+\subsection{Nefunkční požadavky}
+
+\paragraph {NR1 Kolekce:} Je dovolenou použít knihovní kolekce Javy, jako je například rozhraní \lstinline|List| a třída \lstinline|ArrayList|.
+
+
+\paragraph {NR2 Ošetření chyb:} Požaduje se, aby chyby ve vykonávání metod byly hlášeny pouze pomocí výjimek, které budou zachyceny až v metodě \textbf{\texttt{main}}.
+
+\paragraph {NR3 Výčtové hodnoty:} Požaduje se, aby místo konstant byly v programu důsledně používány výčty. 
+
+\paragraph {NR4 Jména výčtových hodnot:} Výčty musí umožňovat uložení přirozeného českého jména hodnoty a to malými písmeny, které se potom použijí při výpisech charakteristik tokenů.
+
+\paragraph {NR5 Omezení délek identifikátorů a klíčových slov:} Požaduje se aby, délka identifikátorů a klíčových slov nepřesáhla délku 32 znaků.
+
+\paragraph {NR6 Hledání klíčových slov:} Klíčová slova se budou vyhledávat ve výčtu klíčových slov.
+
+
+\paragraph {NR7 Struktura tokenů:} Požaduje se, aby třídy, které budou reprezentovat speciální tokeny, byly uspořádány do hierarchického stromu dědičnosti s jednou vrcholovou generalizovanou třídou obecného tokenu.
+
+\paragraph {NR8 Ověření:} Pro ověření aplikace si každý student vytvoří alespoň jeden zkušební textový soubor, kterým bude moci přezkoušet plnění požadavků. Tento soubor bude součástí projektu uloženého na SVN.
+
+\paragraph {NR9 Termín dokončení} Požaduje se dokončení semestrální práce do třetího týdne po zadání. 
+
+
+
